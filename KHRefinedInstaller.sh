@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 echo "Welcome to the Automated KHRefined installer by Kurumi78"
 
 echo "Please wait while your game install is located"
@@ -31,10 +31,29 @@ echo "Downloading KHRefined 3.00"
 curl -LJO https://github.com/TopazTK/KH-ReFined/releases/download/v3.00/ReFined_v3.00.zip
 unzip ReFined_v3.00.zip
 
-echo "Installing KhRefined 3.00"
-mv "Birth by Sleep/Birth by Sleep.exe" "${khInstall}/KINGDOM HEARTS Birth by Sleep FINAL MIX.exe"
-mv "Kingdom Hearts I/Kingdom Hearts I.exe" "${khInstall}/KINGDOM HEARTS FINAL MIX.exe"
-mv "Kingdom Hearts II/Kingdom Hearts II.exe" "${khInstall}/KINGDOM HEARTS II FINAL MIX.exe"
+while true; do
+
+read -p "What game would you like to install Refined for? Type done when you've finished installing all of the options that you want (kh1/kh2/bbs) " GameSel
+
+case $GameSel in
+        kh1 | Kh1 | KH1 | KH )
+               mv "${khInstall}/KINGDOM HEARTS FINAL MIX.exe" "${khInstall}/backup/KINGDOM HEARTS FINAL MIX.exe"
+               mv "Kingdom Hearts I/Kingdom Hearts I.exe" "${khInstall}/KINGDOM HEARTS FINAL MIX.exe"
+               ;;
+        kh2 | Kh2 | KH2 ) 
+               mv "${khInstall}/KINGDOM HEARTS II FINAL MIX.exe" "${khInstall}/backup/KINGDOM HEARTS II FINAL MIX.exe"
+               mv "Kingdom Hearts II/Kingdom Hearts II.exe" "${khInstall}/KINGDOM HEARTS II FINAL MIX.exe" 
+               ;;
+        bbs | Bbs | BBs | BBS | BbS )
+               mv "${khInstall}/KINGDOM HEARTS Birth by Sleep FINAL MIX.exe" "${khInstall}/backup/KINGDOM HEARTS Birth by Sleep FINAL MIX.exe"
+               mv "Birth by Sleep/Birth by Sleep.exe" "${khInstall}/KINGDOM HEARTS Birth by Sleep FINAL MIX.exe"
+               ;;
+	done | Done ) break;;
+   
+        * ) echo invalid response;;
+esac
+
+done
 
 echo "Downloading Offline Patch"
 curl -LJO https://cloud.audreyvps.net/s/Offlinepatch/download/OfflinePatch.zip
@@ -49,7 +68,7 @@ echo "Deleting Temporary Working Directories"
 
 rm -rf ~/RefinedSetup/
 
-read -p "Where would you like to install your wineprefix? " prefixlocation
+read -p "Where would you like to install your wineprefix? Please give an Absolute path (No relative paths like '~')" prefixlocation
 
 echo "Creating new Wineprefix at ~/KHPrefix"
 echo "Installing dependencies to wineprefix, this may take awhile."
@@ -70,4 +89,3 @@ done
 
 
 echo "Thanks for using my Refined Installer. If you run into issues contact Kurumi Tokisaki#0001 on discord."
-
