@@ -22,6 +22,7 @@ Intructions
 Dependencies:
   
   1.Winetricks
+  
   2.Curl
   
   
