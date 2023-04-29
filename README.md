@@ -12,11 +12,13 @@ This also automatically installs the Offline Patch for the game.
  
  3.Confirm if it found your game's install location (It should)
  
- 4.Type the directory you would like the wineprefix to install to. EXAMPLE: ~/KHPrefix (Please do not add a slash at the end)
+ 4. Select what games you would like to install KH refined for. Do one at a time, type "done" when finished.
  
- 5.Confirm if you are using Proton or Proton GE to run Kingdom hearts (they have different prefix structures, cant have it do both)
+ 5.Type the directory you would like the wineprefix to install to. EXAMPLE: ~/KHPrefix (Please do not add a slash at the end)
  
- 6.Launch the game.
+ 6.Confirm if you are using Proton or Proton GE to run Kingdom hearts (they have different prefix structures, cant have it do both)
+ 
+ 7.Launch the game.
  
  
  
