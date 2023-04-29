@@ -2,6 +2,8 @@
 
 This is a script to automatically install TopazTK's Re:Fined mod to a game of Kingdom hearts 1, Kingdom Hearts 2, and Kingdom hearts BBS. (This does not install the Refined mod for Dream Drop at this time.)
 
+This also automatically installs the Offline Patch for the game. 
+
 ### Intructions
  
  1.Download the Script
