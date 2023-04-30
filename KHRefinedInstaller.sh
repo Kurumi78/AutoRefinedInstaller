@@ -85,8 +85,8 @@ while true; do
 read -p "Are you running Kingdom hearts with proton or Proton GE? (y/n) " ProCon
  
 case $ProCon in
-        [yY] ) WINEPREFIX=${prefixlocation}/pfx winetricks -q dotnet48 vcrun2022 win10;
-               WINEPREFIX=${prefixlocation}/pfx winetricks -q dotnet48 vcrun2022 win10; 
+        [yY] ) WINEPREFIX=${prefixlocation}/pfx winetricks -q -f dotnet48 vcrun2022 win10;
+               WINEPREFIX=${prefixlocation}/pfx winetricks -q -f dotnet48 vcrun2022 win10; 
 	       break;;
         [nN] ) WINEPREFIX=${prefixlocation} winetricks -q dotnet48 vcrun2022 win10;
                WINEPREFIX=${prefixlocation} winetricks -q dotnet48 vcrun2022 win10;
