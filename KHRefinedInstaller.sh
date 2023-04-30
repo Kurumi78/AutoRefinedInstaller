@@ -76,22 +76,25 @@ rm -rf ~/RefinedSetup/
 
 read -p "Where would you like to install your wineprefix? Please give an Absolute path (No relative paths like '~')" prefixlocation
 
-echo "Creating new Wineprefix at ~/KHPrefix"
+echo "Creating new Wineprefix"
 echo "Installing dependencies to wineprefix, this may take awhile."
 
 while true; do
 
 read -p "Are you running Kingdom hearts with proton or Proton GE? (y/n) " ProCon
-
+ 
 case $ProCon in
-        [yY] ) WINEPREFIX=${prefixlocation}/pfx winetricks -q -f dotnet48 vcrun2022; 
+        [yY] ) WINEPREFIX=${prefixlocation}/pfx winetricks -q dotnet48 vcrun2022 win10;
+               WINEPREFIX=${prefixlocation}/pfx winetricks -q dotnet48 vcrun2022 win10; 
 	       break;;
-        [nN] ) WINEPREFIX=${prefixlocation} winetricks -q -f dotnet48 vcrun2022;
+        [nN] ) WINEPREFIX=${prefixlocation} winetricks -q dotnet48 vcrun2022 win10;
+               WINEPREFIX=${prefixlocation} winetricks -q dotnet48 vcrun2022 win10;
       	       break;;
-        * ) echo invalid response;;
+        * ) echo invalid response;; #Yes, that is being run twice, found it fixes some issues with it not installing properly. if it installs right on the first try, the second one gets skipped.
 esac
 
 done
-
+echo "Apply Linux FMV Crashfix"
+mv "${khInstall}/EPIC" "${khInstall}/EPIC.bak"
 
 echo "Thanks for using my Refined Installer. If you run into issues contact Kurumi Tokisaki#0001 on discord."
