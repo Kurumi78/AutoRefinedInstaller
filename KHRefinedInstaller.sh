@@ -33,28 +33,32 @@ unzip ReFined_v3.00.zip
 
 while true; do
 
-read -p "What game would you like to install Refined for? Type done when you've finished installing all of the options that you want (kh1/kh2/bbs) " GameSel
+read -p "What game would you like to install Refined for? Type done when you've finished installing all of the options that you want (kh1/kh2/bbs/done) " GameSel
 
 case $GameSel in
-        kh1 | Kh1 | KH1 | KH )
+        [Kk][Hh]1 | [Kk][Hh]I | [Kk][Hh] )
                mv "${khInstall}/KINGDOM HEARTS FINAL MIX.exe" "${khInstall}/backup/KINGDOM HEARTS FINAL MIX.exe"
                mv "Kingdom Hearts I/Kingdom Hearts I.exe" "${khInstall}/KINGDOM HEARTS FINAL MIX.exe"
                ;;
-        kh2 | Kh2 | KH2 ) 
+        [Kk][Hh]2 ) 
                mv "${khInstall}/KINGDOM HEARTS II FINAL MIX.exe" "${khInstall}/backup/KINGDOM HEARTS II FINAL MIX.exe"
                mv "Kingdom Hearts II/Kingdom Hearts II.exe" "${khInstall}/KINGDOM HEARTS II FINAL MIX.exe" 
                ;;
-        bbs | Bbs | BBs | BBS | BbS )
+        [Bb][Bb][Ss] )
                mv "${khInstall}/KINGDOM HEARTS Birth by Sleep FINAL MIX.exe" "${khInstall}/backup/KINGDOM HEARTS Birth by Sleep FINAL MIX.exe"
                mv "Birth by Sleep/Birth by Sleep.exe" "${khInstall}/KINGDOM HEARTS Birth by Sleep FINAL MIX.exe"
                ;;
-	done | Done ) break;;
+	    [Dd][Oo][Nn][Ee] ) break;;
    
         * ) echo invalid response;;
 esac
 
 done
 
+read -p "Would you like to install the offline patch? (y/n) " OCon
+
+
+if [[ $OCon == "y" ]]; then
 echo "Downloading Offline Patch"
 curl -LJO https://cloud.audreyvps.net/s/Offlinepatch/download/OfflinePatch.zip
 unzip OfflinePatch.zip
@@ -63,6 +67,8 @@ echo "Installing Offline Patch"
 mv "OfflinePatch/CODEX64.dll" "${khInstall}"
 mv "OfflinePatch/EOSSDK-Win64-Shipping.dll" "${khInstall}"
 mv "OfflinePatch/epic_emu.ini" "${khInstall}"
+
+fi
 
 echo "Deleting Temporary Working Directories"
 
@@ -78,9 +84,9 @@ while true; do
 read -p "Are you running Kingdom hearts with proton or Proton GE? (y/n) " ProCon
 
 case $ProCon in
-        [yY] ) WINEPREFIX=${prefixlocation}/pfx winetricks -q dotnet48 vcrun2022; 
+        [yY] ) WINEPREFIX=${prefixlocation}/pfx winetricks -q -f dotnet48 vcrun2022; 
 	       break;;
-        [nN] ) WINEPREFIX=${prefixlocation} winetricks -q dotnet48 vcrun2022;
+        [nN] ) WINEPREFIX=${prefixlocation} winetricks -q -f dotnet48 vcrun2022;
       	       break;;
         * ) echo invalid response;;
 esac
