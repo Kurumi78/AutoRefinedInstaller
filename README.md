@@ -34,4 +34,6 @@ This also automatically installs the Offline Patch for the game.
 ### Notes:
 
   The script isnt very robust. if you feed it an invalid directory it will just error out. A wineprefix will be auto-generated if one des not exist at the current location. 
-  
+
+This script is compatible with the steam deck, however you much run it through Lutris's terminal.
+
