@@ -31,6 +31,7 @@ echo "Downloading KHRefined 3.00"
 curl -LJO https://github.com/TopazTK/KH-ReFined/releases/download/v3.00/ReFined_v3.00.zip
 unzip ReFined_v3.00.zip
 
+mkdir "${khInstall}/backup"
 while true; do
 
 read -p "What game would you like to install Refined for? Type done when you've finished installing all of the options that you want (kh1/kh2/bbs/done) " GameSel
