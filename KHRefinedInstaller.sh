@@ -38,11 +38,11 @@ while true; do
 read -p "Which version of Re:Fined would you like to download? To select which game, please enter one game at a time (kh1/kh2/kh2da/bbs/bbsda). When you are finished, enter ''done'' without the quotation marks and hit enter. " GameSel
 
 case $GameSel in
-        [Kk][Hh]1 | [Kk][Hh]I | [Kk][Hh] )
+        [Kk][Hh]1 | [Kk][Hh][Ii] | [Kk][Hh] )
                mv "${khInstall}/KINGDOM HEARTS FINAL MIX.exe" "${khInstall}/backup/KINGDOM HEARTS FINAL MIX.exe"
                mv "Kingdom Hearts I/Kingdom Hearts I.exe" "${khInstall}/KINGDOM HEARTS FINAL MIX.exe"
                ;;
-        [Kk][Hh]2 ) 
+        [Kk][Hh]2 | [Kk][Hh][Ii][Ii] ) 
                mv "${khInstall}/KINGDOM HEARTS II FINAL MIX.exe" "${khInstall}/backup/KINGDOM HEARTS II FINAL MIX.exe"
                mv "Kingdom Hearts II/Kingdom Hearts II.exe" "${khInstall}/KINGDOM HEARTS II FINAL MIX.exe" 
                ;;
