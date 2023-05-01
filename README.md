@@ -16,7 +16,7 @@ This also automatically installs the Offline Patch for the game.
  
  5.Confirm if you would like the Offline patch.
  
- 6.Confirm if you are using Proton or Proton GE to run Kingdom hearts (they have different prefix structures, cant have it do both)
+ 6.Confirm if you are using Proton or Proton GE to run Kingdom hearts (You want to select Wine unless you know what your doing.)
  
  7.Set the game to use the new wineprefix in your home directory. This will be /home/(username)/RefinedPrefix (Username is "deck" on the steamdeck).
  
