@@ -70,7 +70,7 @@ read -p "Would you like to install the Offline Patch? This will allow you to pla
 
 if [[ $OCon == "y" ]]; then
 echo "Moving Game Launcher, WaitTitleProject.exe, and original EOSSDK-Win64-Shipping.dll to the backup folder..."
-cd ${khInstal}
+cd ${khInstall}
 mv "${khInstall}/KINGDOM HEARTS HD 1.5+2.5 ReMIX.exe" "${khInstall}/backup/KINGDOM HEARTS HD 1.5+2.5 ReMIX.exe"
 mv "${khInstall}/KINGDOM HEARTS HD 1.5+2.5 Launcher.exe" "${khInstall}/backup/KINGDOM HEARTS HD 1.5+2.5 Launcher.exe"
 mv "${khInstall}/WaitTitleProject.exe" "${khInstall}/backup/WaitTitleProject.exe"
