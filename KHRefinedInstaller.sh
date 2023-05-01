@@ -86,12 +86,10 @@ read -p "Are you running Kingdom hearts with proton or Proton GE? (y/n) " ProCon
  
 case $ProCon in
         [yY] ) WINEPREFIX=${prefixlocation}/pfx winetricks -q -f dotnet48 vcrun2022 win10;
-               WINEPREFIX=${prefixlocation}/pfx winetricks -q -f dotnet48 vcrun2022 win10; 
 	       break;;
         [nN] ) WINEPREFIX=${prefixlocation} winetricks -q dotnet48 vcrun2022 win10;
-               WINEPREFIX=${prefixlocation} winetricks -q dotnet48 vcrun2022 win10;
       	       break;;
-        * ) echo invalid response;; #Yes, that is being run twice, found it fixes some issues with it not installing properly. if it installs right on the first try, the second one gets skipped.
+        * ) echo invalid response;; 
 esac
 
 done
