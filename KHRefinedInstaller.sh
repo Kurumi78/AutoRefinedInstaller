@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 echo "Welcome to the Automated KHRefined installer by Kurumi78"
 
 echo "Please wait while your game install is located"
@@ -30,6 +30,7 @@ cd ~/RefinedSetup
 echo "Downloading KHRefined 3.00"
 curl -LJO https://github.com/TopazTK/KH-ReFined/releases/download/v3.00/ReFined_v3.00.zip
 unzip ReFined_v3.00.zip
+
 
 mkdir "${khInstall}/backup"
 while true; do
@@ -75,7 +76,6 @@ echo "Deleting Temporary Working Directories"
 
 rm -rf ~/RefinedSetup/
 
-read -p "Where would you like to install your wineprefix? Please give an Absolute path (No relative paths like '~')" prefixlocation
 
 echo "Creating new Wineprefix"
 echo "Installing dependencies to wineprefix, this may take awhile."
@@ -83,13 +83,15 @@ echo "Installing dependencies to wineprefix, this may take awhile."
 while true; do
 
 read -p "Are you running Kingdom hearts with proton or Proton GE? (y/n) " ProCon
+
+#echo "$prefixlocation" 
  
 case $ProCon in
-        [yY] ) WINEPREFIX=${prefixlocation}/pfx winetricks -q -f dotnet48 vcrun2022 win10;
+        [yY] ) WINEPREFIX=~/RefinedPrefix/pfx winetricks -q -f dotnet48 vcrun2022 win10
 	       break;;
-        [nN] ) WINEPREFIX=${prefixlocation} winetricks -q dotnet48 vcrun2022 win10;
+        [nN] ) WINEPREFIX=~/RefinedPrefix winetricks -q -f dotnet48 vcrun2022 win10
       	       break;;
-        * ) echo invalid response;; 
+        * ) echo invalid response;;
 esac
 
 done
