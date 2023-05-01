@@ -82,14 +82,14 @@ echo "Installing dependencies to wineprefix, this may take awhile."
 
 while true; do
 
-read -p "Are you running Kingdom hearts with proton or Proton GE? (y/n) " ProCon
+read -p "Are you running Kingdom hearts with proton or wine? (proton/wine) " ProCon
 
 #echo "$prefixlocation" 
  
 case $ProCon in
-        [yY] ) WINEPREFIX=~/RefinedPrefix/pfx winetricks -q -f dotnet48 vcrun2022 win10
+        [Pp][Rr][Oo][Tt][Oo][Nn] ) WINEPREFIX=~/RefinedPrefix/pfx winetricks -q -f dotnet48 vcrun2022 win10
 	       break;;
-        [nN] ) WINEPREFIX=~/RefinedPrefix winetricks -q -f dotnet48 vcrun2022 win10
+        [Ww][Ii][Nn][Ee] ) WINEPREFIX=~/RefinedPrefix winetricks -q -f dotnet48 vcrun2022 win10
       	       break;;
         * ) echo invalid response;;
 esac
