@@ -69,14 +69,12 @@ read -p "Would you like to install the Offline Patch? This will allow you to pla
 
 
 if [[ $OCon == "y" ]]; then
-echo "Backing up original EOSSDK-Win64-Shipping.dll..."
+echo "Moving Game Launcher, WaitTitleProject.exe, and original EOSSDK-Win64-Shipping.dll to the backup folder..."
 cd ${khInstal}
-mv "${khInstall}/EOSSDK-Win64-Shipping.dll" "${khInstall}/backup/EOSSDK-Win64-Shipping.dll"
-
-echo "Moving Game Launcher and WaitTitleProject.exe to backup folder..."
-mv "${khInstall}/WaitTitleProject.exe" "${khInstall}/backup/WaitTitleProject.exe"
 mv "${khInstall}/KINGDOM HEARTS HD 1.5+2.5 ReMIX.exe" "${khInstall}/backup/KINGDOM HEARTS HD 1.5+2.5 ReMIX.exe"
 mv "${khInstall}/KINGDOM HEARTS HD 1.5+2.5 Launcher.exe" "${khInstall}/backup/KINGDOM HEARTS HD 1.5+2.5 Launcher.exe"
+mv "${khInstall}/WaitTitleProject.exe" "${khInstall}/backup/WaitTitleProject.exe"
+mv "${khInstall}/EOSSDK-Win64-Shipping.dll" "${khInstall}/backup/EOSSDK-Win64-Shipping.dll"
 
 cd ~/RefinedSetup
 
