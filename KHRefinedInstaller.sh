@@ -33,7 +33,7 @@ echo "Downloading Kingdom Hearts Re:Fined 4.00 by TopazTK"
 
 curl -LJO https://cloud.audreyvps.net/s/Kh2Refined4/download/KH2.exe
 curl -LJO https://cloud.audreyvps.net/s/KHPCPatchManager/download/KHPCPatchManager.exe
-curl -LJO PCpatchHere
+curl -LJO https://cloud.audreyvps.net/s/RefinedPatches/download/ReFinedBETA-SteamOS.kh2pcpatch
 
 kh2DAStatus = false;
 khBBSDAstatus = false;
