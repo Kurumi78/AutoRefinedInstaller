@@ -31,7 +31,7 @@ echo "Downloading Kingdom Hearts Re:Fined 4.00 by TopazTK"
 #curl -LJO https://github.com/TopazTK/KH-ReFined/releases/download/v3.00/ReFined_v3.00.zip
 #unzip ReFined_v3.00.zip
 
-curl -LJO KH2EXEDownloadHere
+curl -LJO https://cloud.audreyvps.net/s/Kh2Refined4/download/KH2.exe
 curl -LJO https://cloud.audreyvps.net/s/KHPCPatchManager/download/KHPCPatchManager.exe
 curl -LJO PCpatchHere
 
