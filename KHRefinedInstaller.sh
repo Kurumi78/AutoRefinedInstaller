@@ -64,16 +64,17 @@ case $GameSel in
 esac
 
 done
+echo "Moving WaitTitleProject.exe to the backup folder..."
+mv "${khInstall}/WaitTitleProject.exe" "${khInstall}/backup/WaitTitleProject.exe"
 
 read -p "Would you like to install the Offline Patch? This will allow you to play the games offline and bypass the game launcher, but save data will be made with the EGS ID of ''1638'', which may make older save files not made with this ID incompatable! (y/n) " OCon
 
 
 if [[ $OCon == "y" ]]; then
-echo "Moving Game Launcher, WaitTitleProject.exe, and original EOSSDK-Win64-Shipping.dll to the backup folder..."
+echo "Moving original EOSSDK-Win64-Shipping.dll to the backup folder..."
 #cd ${khInstall} This is unnecceccary 
-mv "${khInstall}/KINGDOM HEARTS HD 1.5+2.5 ReMIX.exe" "${khInstall}/backup/KINGDOM HEARTS HD 1.5+2.5 ReMIX.exe"
-mv "${khInstall}/KINGDOM HEARTS HD 1.5+2.5 Launcher.exe" "${khInstall}/backup/KINGDOM HEARTS HD 1.5+2.5 Launcher.exe"
-mv "${khInstall}/WaitTitleProject.exe" "${khInstall}/backup/WaitTitleProject.exe"
+#mv "${khInstall}/KINGDOM HEARTS HD 1.5+2.5 ReMIX.exe" "${khInstall}/backup/KINGDOM HEARTS HD 1.5+2.5 ReMIX.exe"
+#mv "${khInstall}/KINGDOM HEARTS HD 1.5+2.5 Launcher.exe" "${khInstall}/backup/KINGDOM HEARTS HD 1.5+2.5 Launcher.exe"
 mv "${khInstall}/EOSSDK-Win64-Shipping.dll" "${khInstall}/backup/EOSSDK-Win64-Shipping.dll"
 
 cd ~/RefinedSetup
