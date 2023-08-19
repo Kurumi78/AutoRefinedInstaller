@@ -25,7 +25,7 @@ This also automatically installs the Offline Patch for the game.
  
  
  
-### Dependencies:
+### Dependencies: (both pre-installed on the steam deck)
   
   1.Winetricks
   
